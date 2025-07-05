@@ -19,30 +19,35 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light" className='tech-stack-icon' alt="logo" />
+        <img src="https://skillicons.dev/icons?i=nestjs,postgres,react&theme=light" className='tech-stack-icon' alt="logo" />
 
         <h3 className="app-stack">Nestjs + PostgreSQL + Reactjs</h3>
         <h1 className='header'>Welcome!!! This page show users</h1>
         {loading && <p>Loading...</p>}
         {error && <p style={{ color: 'red' }}>Error: {error}</p>}
         {!loading && !error && (
-          <table>
-            <thead>
-              <tr>
-                <th className='id-th'>ID</th>
-                <th>Name</th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user) => (
-                <tr key={user.id}>
-                  <td>{user.id}</td>
-                  <td>{user.name}</td>
+          users.length === 0 ? (
+            <p className='empty-text'>Users not found</p>
+          ) : (
+            <table>
+              <thead>
+                <tr>
+                  <th className='id-th'>ID</th>
+                  <th>Name</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {users.map((user) => (
+                  <tr key={user.id}>
+                    <td>{user.id}</td>
+                    <td>{user.name}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )
         )}
+
       </header>
     </div>
   );

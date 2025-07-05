@@ -32,6 +32,21 @@
   list-style: none;
 }
 
+h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.empty-text {
+  font-size: 1.5rem;
+  color: #61dafb;
+}
+
 table {
   border-collapse: separate;
   border-spacing: 0;
